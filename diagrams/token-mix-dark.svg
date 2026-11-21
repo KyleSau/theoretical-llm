@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 418" width="760" height="418" role="img" aria-label="Pretraining token mix" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>Pretraining token mix</title>
+<desc>Ranked bar chart of pretraining tokens by source.</desc>
+<rect x="0.5" y="0.5" width="759" height="417" rx="8" fill="#1a1a19" stroke="#2c2c2a"/>
+<text x="24" y="34" font-size="15" font-weight="600" fill="#f0efec">Pretraining token mix</text>
+<text x="24" y="54" font-size="12" fill="#c3c2b7">Trillions of tokens by source. Total 216 trillion.</text>
+<line x1="314.0" y1="72" x2="314.0" y2="378" stroke="#383835" stroke-width="1"/>
+<text x="314.0" y="396" font-size="11" fill="#898781" text-anchor="middle">0T</text>
+<line x1="428.7" y1="72" x2="428.7" y2="378" stroke="#2c2c2a" stroke-width="1"/>
+<text x="428.7" y="396" font-size="11" fill="#898781" text-anchor="middle">20T</text>
+<line x1="543.3" y1="72" x2="543.3" y2="378" stroke="#2c2c2a" stroke-width="1"/>
+<text x="543.3" y="396" font-size="11" fill="#898781" text-anchor="middle">40T</text>
+<line x1="658.0" y1="72" x2="658.0" y2="378" stroke="#2c2c2a" stroke-width="1"/>
+<text x="658.0" y="396" font-size="11" fill="#898781" text-anchor="middle">60T</text>
+<text x="304" y="97.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Open web text, filtered</text>
+<path d="M314,86.0 h340.0 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-340.0 z" fill="#3987e5"/>
+<text x="666.0" y="97.0" font-size="12" fill="#f0efec">60T</text>
+<text x="304" y="127.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Video frames (licensed)</text>
+<path d="M314,116.0 h340.0 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-340.0 z" fill="#3987e5"/>
+<text x="666.0" y="127.0" font-size="12" fill="#f0efec">60T</text>
+<text x="304" y="157.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Two more passes over the best text and code</text>
+<path d="M314,146.0 h190.9 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-190.9 z" fill="#3987e5"/>
+<text x="516.9" y="157.0" font-size="12" fill="#f0efec">34T</text>
+<text x="304" y="187.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Synthetic and self-generated</text>
+<path d="M314,176.0 h168.0 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-168.0 z" fill="#3987e5"/>
+<text x="494.0" y="187.0" font-size="12" fill="#f0efec">30T</text>
+<text x="304" y="217.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Native audio</text>
+<path d="M314,206.0 h53.3 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-53.3 z" fill="#3987e5"/>
+<text x="379.3" y="217.0" font-size="12" fill="#f0efec">10T</text>
+<text x="304" y="247.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Code</text>
+<path d="M314,236.0 h30.4 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-30.4 z" fill="#3987e5"/>
+<text x="356.4" y="247.0" font-size="12" fill="#f0efec">6T</text>
+<text x="304" y="277.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Books, papers, patents, law</text>
+<path d="M314,266.0 h30.4 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-30.4 z" fill="#3987e5"/>
+<text x="356.4" y="277.0" font-size="12" fill="#f0efec">6T</text>
+<text x="304" y="307.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Image-text pairs</text>
+<path d="M314,296.0 h24.7 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-24.7 z" fill="#3987e5"/>
+<text x="350.7" y="307.0" font-size="12" fill="#f0efec">5T</text>
+<text x="304" y="337.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Licensed forums and news</text>
+<path d="M314,326.0 h13.2 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-13.2 z" fill="#3987e5"/>
+<text x="339.2" y="337.0" font-size="12" fill="#f0efec">3T</text>
+<text x="304" y="367.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Transcribed speech</text>
+<path d="M314,356.0 h7.5 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-7.5 z" fill="#3987e5"/>
+<text x="333.5" y="367.0" font-size="12" fill="#f0efec">2T</text>
+</svg>

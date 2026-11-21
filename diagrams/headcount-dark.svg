@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 448" width="760" height="448" role="img" aria-label="Headcount by function" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>Headcount by function</title>
+<desc>Ranked bar chart of headcount by function.</desc>
+<rect x="0.5" y="0.5" width="759" height="447" rx="8" fill="#1a1a19" stroke="#2c2c2a"/>
+<text x="24" y="34" font-size="15" font-weight="600" fill="#f0efec">Headcount by function</text>
+<text x="24" y="54" font-size="12" fill="#c3c2b7">Permanent staff at launch. Total about 2,960.</text>
+<line x1="314.0" y1="72" x2="314.0" y2="408" stroke="#383835" stroke-width="1"/>
+<text x="314.0" y="426" font-size="11" fill="#898781" text-anchor="middle">0</text>
+<line x1="428.7" y1="72" x2="428.7" y2="408" stroke="#2c2c2a" stroke-width="1"/>
+<text x="428.7" y="426" font-size="11" fill="#898781" text-anchor="middle">200</text>
+<line x1="543.3" y1="72" x2="543.3" y2="408" stroke="#2c2c2a" stroke-width="1"/>
+<text x="543.3" y="426" font-size="11" fill="#898781" text-anchor="middle">400</text>
+<line x1="658.0" y1="72" x2="658.0" y2="408" stroke="#2c2c2a" stroke-width="1"/>
+<text x="658.0" y="426" font-size="11" fill="#898781" text-anchor="middle">600</text>
+<text x="304" y="97.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Data center engineering and site operations</text>
+<path d="M314,86.0 h340.0 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-340.0 z" fill="#3987e5"/>
+<text x="666.0" y="97.0" font-size="12" fill="#f0efec">600</text>
+<text x="304" y="127.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Research</text>
+<path d="M314,116.0 h196.7 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-196.7 z" fill="#3987e5"/>
+<text x="522.7" y="127.0" font-size="12" fill="#f0efec">350</text>
+<text x="304" y="157.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Product, inference and harness engineering</text>
+<path d="M314,146.0 h196.7 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-196.7 z" fill="#3987e5"/>
+<text x="522.7" y="157.0" font-size="12" fill="#f0efec">350</text>
+<text x="304" y="187.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">ML systems and research engineering</text>
+<path d="M314,176.0 h168.0 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-168.0 z" fill="#3987e5"/>
+<text x="494.0" y="187.0" font-size="12" fill="#f0efec">300</text>
+<text x="304" y="217.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Safety</text>
+<path d="M314,206.0 h168.0 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-168.0 z" fill="#3987e5"/>
+<text x="494.0" y="217.0" font-size="12" fill="#f0efec">300</text>
+<text x="304" y="247.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Data</text>
+<path d="M314,236.0 h139.3 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-139.3 z" fill="#3987e5"/>
+<text x="465.3" y="247.0" font-size="12" fill="#f0efec">250</text>
+<text x="304" y="277.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Compute infrastructure</text>
+<path d="M314,266.0 h139.3 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-139.3 z" fill="#3987e5"/>
+<text x="465.3" y="277.0" font-size="12" fill="#f0efec">250</text>
+<text x="304" y="307.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">General and administrative</text>
+<path d="M314,296.0 h110.7 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-110.7 z" fill="#3987e5"/>
+<text x="436.7" y="307.0" font-size="12" fill="#f0efec">200</text>
+<text x="304" y="337.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Security</text>
+<path d="M314,326.0 h99.2 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-99.2 z" fill="#3987e5"/>
+<text x="425.2" y="337.0" font-size="12" fill="#f0efec">180</text>
+<text x="304" y="367.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Legal, policy, compliance, communications</text>
+<path d="M314,356.0 h64.8 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-64.8 z" fill="#3987e5"/>
+<text x="390.8" y="367.0" font-size="12" fill="#f0efec">120</text>
+<text x="304" y="397.0" font-size="12.5" fill="#c3c2b7" text-anchor="end">Energy</text>
+<path d="M314,386.0 h30.4 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-30.4 z" fill="#3987e5"/>
+<text x="356.4" y="397.0" font-size="12" fill="#f0efec">60</text>
+</svg>

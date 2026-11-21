@@ -1,0 +1,275 @@
+
+CLUSTER
+-------
+  GPU racks / per hall                                         3,600 / 450
+  GPUs / per hall                                              259,200 / 32,400
+  GPU rack positions / other IT (MW)                           900 / 100
+  All-in kW per GPU                                            3.47
+  GPU memory, total (PB) / per rack (TB)                       74.6 / 20.7
+  Headline 4-bit (FLOP/s) = TFLOPS                             9.07e+21 = 9,072,000,000
+  Headline 8-bit / 16-bit (FLOP/s)                             4.54e+21 / 1.04e+21
+  Headline sparse 4-bit inference (FLOP/s)                     1.30e+22
+  Sustained while running (FLOP/s) = TFLOPS                    6.48e+20 = 648,000,000
+  Sustained as share of 4-bit / 8-bit / 16-bit peak            7.1% / 14.3% / 62.5%
+  Sustained, wall-clock (FLOP/s)                               5.51e+20
+  FLOPs per day / per 100 days / per year                      4.76e+25 / 4.76e+27 / 1.74e+28
+
+SENSITIVITY (100 full-campus days, dense compute-optimal; flagship days on full campus)
+---------------------------------------------------------------------------------------
+  Conservative: 1.2 PF/GPU at 80% uptime                       2.49e+20 FLOP/s, 2.15e+27 FLOPs, 4.1T params, 88T tokens; flagship 96 days
+  Planning: 2.5 PF/GPU at 85% uptime                           5.51e+20 FLOP/s, 4.76e+27 FLOPs, 6.1T params, 131T tokens; flagship 43 days
+  Aggressive: 4.0 PF/GPU at 90% uptime                         9.33e+20 FLOP/s, 8.06e+27 FLOPs, 7.9T params, 170T tokens; flagship 26 days
+
+MODEL (illustrative flagship configuration)
+-------------------------------------------
+  Attention parameters per layer                               1.26 B
+  Parameters per expert                                        905.97 M
+  Per layer: total / active                                    60.15 B / 9.41 B
+  Attention / shared / routed totals                           211.39 B / 152.20 B / 9.74 T
+  Embedding                                                    6.44 B
+  Total parameters                                             10.11 T
+  Active per token: top-2 / top-8 / top-16                     674.72 B / 1.59 T / 2.81 T
+  Active share (top-8)                                         15.7%
+  Training tokens per total / active parameter                 21.4 / 136
+
+TRAINING RUNS
+-------------
+  Compute-optimal dense model for 100 full-campus days         6.06 T params on 130.95 T tokens
+  Flagship (sparse, top-8): FLOPs                              2.06e+27
+  Flagship (sparse, top-8): days full campus / at 60%          43.2 / 72.1
+  Flagship (sparse, top-8): tokens per second at that share    40.81 M
+  Sparser variant (top-2): FLOPs                               8.74e+26
+  Sparser variant (top-2): days full campus / at 60%           18.4 / 30.6
+  Sparser variant (top-2): tokens per second at that share     96.04 M
+  Denser variant (top-16): FLOPs                               3.64e+27
+  Denser variant (top-16): days full campus / at 60%           76.4 / 127.3
+  Denser variant (top-16): tokens per second at that share     23.10 M
+  Dense, 100-day optimum: FLOPs                                4.76e+27
+  Dense, 100-day optimum: days full campus / at 100%           100.0 / 100.0
+  Dense, 100-day optimum: tokens per second at that share      17.83 M
+  Dense 10T: FLOPs                                             1.30e+28
+  Dense 10T: days full campus / at 100%                        272.6 / 272.6
+  Dense 10T: tokens per second at that share                   10.80 M
+  Pilot: dense 1T: FLOPs                                       1.30e+26
+  Pilot: dense 1T: days full campus / at 25%                   2.7 / 10.9
+  Pilot: dense 1T: tokens per second at that share             27.00 M
+
+FLAGSHIP RUN PLAN
+-----------------
+  GPUs in the run / per model replica / replicas               155,520 / 288 / 540
+  GPU memory per replica (TB)                                  82.9
+  Tokens per second while running                              40.81 M
+  Tokens per step / seconds per step / steps                   268.44 M / 6.58 / 804,663
+  Sequences per replica per step                               61
+  Gradient size (TB) / replica bandwidth (TB/s)                20.2 / 57.6
+  Gradient exchange per step (s) / weight copy to rejoin (s)   0.70 / 0.35
+  Minutes between component failures in the run                17
+  Token stream to the cluster (MB/s)                           163
+
+SCALING LADDER
+--------------
+  Rung 1 (rented)                                              1.00 B params, 21.62 B tokens, 1.30e+20 FLOPs, 0.00 days
+  Rung 2 (rented)                                              10.00 B params, 216.20 B tokens, 1.30e+22 FLOPs, 0.01 days
+  Rung 3: first working model (rented)                         100.00 B params, 2.16 T tokens, 1.30e+24 FLOPs, 0.75 days
+  Rung 4: pilot (halls 1-2)                                    1.00 T params, 21.62 T tokens, 1.30e+26 FLOPs, 10.90 days
+  Rung 5: dress rehearsal (halls 1-4 at 50%)                   1.59 T params, 20.00 T tokens, 1.91e+26 FLOPs, 16.02 days
+  Rung 6: flagship (halls 1-6 at 80%)                          1.59 T params, 216.00 T tokens, 2.06e+27 FLOPs, 72.07 days
+
+POST-TRAINING (one pass through every stage)
+--------------------------------------------
+  Mid-training (curated, long context)                         6.19e+25   10%
+  Supervised fine-tuning                                       5.72e+23   0%
+  Reasoning RL (sample + train)                                2.54e+26   40%
+  Agentic RL (sample + train)                                  2.29e+26   36%
+  Distillation (teacher output + two students)                 8.49e+25   13%
+  Evaluation passes                                            6.35e+24   1%
+  One pass: FLOPs / full-campus days                           6.36e+26 / 13.4
+  With variants and reruns: FLOPs / full-campus days           2.55e+27 / 53.5
+  Reasoning RL tokens / agentic RL tokens                      20.00 T / 18.00 T
+  Sandbox-hours / concurrent sandboxes / vCPUs                 75.00 M / 52,083 / 104,167
+
+FIRST-YEAR COMPUTE BUDGET (share of one campus-year)
+----------------------------------------------------
+  Research experiments, ablations, scaling sweeps              4.34e+27   25.0%
+  Pilot and dress-rehearsal runs                               5.21e+26   3.0%
+  Flagship pretraining                                         2.06e+27   11.8%
+  Post-training, all variants                                  2.55e+27   14.7%
+  Evaluations, red teaming, classifier training, synthetic dat 6.95e+26   4.0%
+  Reserve for restarts and reruns                              8.69e+26   5.0%
+  Inference: internal use, previews, launch                    6.34e+27   36.5%
+
+DATA MIX (trillions of tokens)
+------------------------------
+  Open web text (own crawl + Common Crawl), filtered, deduplic     60   28%
+  Code (permissive public repositories, licensed)                   6   3%
+  Books, papers, patents, law, government records                   6   3%
+  Licensed forums, social and news                                  3   1%
+  Transcribed speech (licensed audio and video)                     2   1%
+  Two further passes over the best 17T of text and code            34   16%
+  Synthetic and self-generated (verified reasoning, code, math     30   14%
+  Image-text pairs                                                  5   2%
+  Video frames (licensed)                                          60   28%
+  Native audio                                                     10   5%
+  TOTAL                                                           216
+  By kind                                                      text 105, code 6, synthetic 30, multimodal 75
+  Check: speech tokens from licensed hours (T)                 1.8
+  Check: video tokens per sampled frame                        167
+
+STORAGE
+-------
+  Raw crawl / images / video / audio (PB)                      42.0 / 2.0 / 100.0 / 1.5
+  Raw total (PB) / tokenized training set (PB)                 145.5 / 0.86
+  Data lake to provision (PB)                                  409
+  Checkpoint: weights only / full state (TB)                   20.2 / 101.1
+  Checkpoint store (PB)                                        12.1
+  Write rate to land a full checkpoint in 5 min (GB/s)         337
+  Flash tier (PB) / full checkpoint time on it (s)             60 / 40
+
+CRAWL AND INGEST
+----------------
+  Pages per second / billions per day                          50,697 / 4.38
+  Crawl bandwidth (Gbit/s)                                     182
+  Media ingest bandwidth (Gbit/s)                              35
+
+POWER AND COOLING
+-----------------
+  Facility power: annual average / nameplate (MW)              1,150 / 1,300
+  Energy per year: full load / at load factor (TWh)            10.07 / 8.56
+  Electricity per year: full load / load factor ($M)           685 / 582
+  CO2 per year, full load: combined cycle / aero (Mt)          3.43 / 4.84
+  Equivalent US homes                                          932,778
+  Heat to liquid (MW)                                          950
+  Coolant flow (m3/s) / (L/min)                                23.9 / 1,432,881
+  Coolant flow per GPU rack (L/min)                            358
+  Coolant distribution units / heat-rejection units            455 / 703
+
+BACKEND NETWORK (8 planes, two tiers each)
+------------------------------------------
+  800G host ports / Tbit/s per GPU                             518,400 / 1.6
+  Largest two-tier plane these switches allow (GPUs)           2,097,152
+  Leaf / spine per plane; switch chassis in total              254 / 127; 3,048
+  200G lanes: host side / leaf-spine                           2,073,600 / 2,080,768
+  800G-equivalent optical links                                1,036,800
+  Host-side 800G transceivers / pluggables without CPO         518,400 / 2,073,600
+  Edge capacity / bisection (Pbit/s)                           415 / 207
+
+INFERENCE: rack economics and context cache
+-------------------------------------------
+  Rack-year: Rack, depreciated ($M)                            2.12
+  Rack-year: Facility share, depreciated ($M)                  0.29
+  Rack-year: Electricity ($M)                                  0.17
+  Rack-year: Operations and maintenance ($M)                   0.20
+  Rack-year total ($M)                                         2.79
+  Cache per token (MB)                                         0.344
+  Cache at typical / maximum context (GB)                      6.9 / 344
+  Rack memory left after weights (TB)                          15.7
+  Streams that fit: typical / maximum context                  2,279 / 46
+  Flagship fleet: racks / MW / share of campus                 500 / 125 / 14%
+  Flagship fleet: tok/s average / trillions per day / streams  29,755,645 / 2.57 / 651,230
+
+INFERENCE on one rack: flagship (sparse, top-8)
+-----------------------------------------------
+  FLOPs per generated token / weights at 4-bit (TB)            3.18e+12 / 5.06
+  Rack throughput: compute bound / planning (tok/s)            793,484 / 119,023
+  Per stream: bandwidth bound / planning (tok/s)               277 / 91
+  Concurrent streams per rack                                  1,302
+  Cost per million output tokens at 25 / 50 / 75% load ($)     2.97 / 1.49 / 0.99
+  Tokens per day per rack (billions)                           5.1
+
+INFERENCE on one rack: sparser variant (top-2)
+----------------------------------------------
+  FLOPs per generated token / weights at 4-bit (TB)            1.35e+12 / 5.06
+  Rack throughput: compute bound / planning (tok/s)            1,867,451 / 280,118
+  Per stream: bandwidth bound / planning (tok/s)               277 / 91
+  Concurrent streams per rack                                  3,065
+  Cost per million output tokens at 25 / 50 / 75% load ($)     1.26 / 0.63 / 0.42
+  Tokens per day per rack (billions)                           12.1
+
+INFERENCE on one rack: denser variant (top-16)
+----------------------------------------------
+  FLOPs per generated token / weights at 4-bit (TB)            5.61e+12 / 5.06
+  Rack throughput: compute bound / planning (tok/s)            449,109 / 67,366
+  Per stream: bandwidth bound / planning (tok/s)               277 / 91
+  Concurrent streams per rack                                  737
+  Cost per million output tokens at 25 / 50 / 75% load ($)     5.25 / 2.62 / 1.75
+  Tokens per day per rack (billions)                           2.9
+
+INFERENCE on one rack: dense 100-day optimum
+--------------------------------------------
+  FLOPs per generated token / weights at 4-bit (TB)            1.21e+13 / 3.03
+  Rack throughput: compute bound / planning (tok/s)            208,027 / 31,204
+  Per stream: bandwidth bound / planning (tok/s)               462 / 153
+  Concurrent streams per rack                                  205
+  Cost per million output tokens at 25 / 50 / 75% load ($)     11.33 / 5.67 / 3.78
+  Tokens per day per rack (billions)                           1.3
+
+INFERENCE on one rack: dense 10T
+--------------------------------
+  FLOPs per generated token / weights at 4-bit (TB)            2.00e+13 / 5.00
+  Rack throughput: compute bound / planning (tok/s)            126,000 / 18,900
+  Per stream: bandwidth bound / planning (tok/s)               280 / 92
+  Concurrent streams per rack                                  205
+  Cost per million output tokens at 25 / 50 / 75% load ($)     18.71 / 9.35 / 6.24
+  Tokens per day per rack (billions)                           0.8
+
+INFERENCE on one rack: mid tier
+-------------------------------
+  FLOPs per generated token / weights at 4-bit (TB)            4.00e+11 / 0.50
+  Rack throughput: compute bound / planning (tok/s)            6,300,000 / 945,000
+  Per stream: bandwidth bound / planning (tok/s)               2,800 / 400
+  Concurrent streams per rack                                  2,362
+  Cost per million output tokens at 25 / 50 / 75% load ($)     0.37 / 0.19 / 0.12
+  Tokens per day per rack (billions)                           40.8
+
+INFERENCE on one rack: small tier
+---------------------------------
+  FLOPs per generated token / weights at 4-bit (TB)            6.00e+10 / 0.05
+  Rack throughput: compute bound / planning (tok/s)            42,000,000 / 6,300,000
+  Per stream: bandwidth bound / planning (tok/s)               28,000 / 400
+  Concurrent streams per rack                                  15,750
+  Cost per million output tokens at 25 / 50 / 75% load ($)     0.06 / 0.03 / 0.02
+  Tokens per day per rack (billions)                           272.2
+
+TEAM
+----
+  Research (pretraining, architecture, multimodal, RL, evals)    350   $0.77B
+  ML systems and research engineering                            300   $0.36B
+  Data (crawl, pipeline, licensing, annotation ops, synthetic)   250   $0.17B
+  Compute infrastructure (cluster SRE, network, storage, hardw   250   $0.20B
+  Data center engineering and site operations                    600   $0.18B
+  Energy (procurement, grid, plant oversight)                     60   $0.03B
+  Safety (safeguards, alignment, red team, frontier evals, pol   300   $0.36B
+  Security (information, physical, insider risk)                 180   $0.13B
+  Product, inference and harness engineering                     350   $0.32B
+  Legal, policy, compliance, communications                      120   $0.08B
+  General and administrative                                     200   $0.08B
+  TOTAL                                                         2960   $2.68B per year
+
+COST ($B)
+---------
+  capex: GPU racks                                              30.60
+  capex: Scale-out network, optics, cabling                      4.59
+  capex: Storage                                                 1.00
+  capex: CPU fleet (data processing, RL environments)            1.00
+  capex: Buildings, electrical, cooling                         17.50
+  capex: On-site generation                                      2.86
+  capex: Battery storage                                         0.24
+  capex: Substations and grid interconnect                       0.40
+  capex: Land and site works                                     0.15
+  IT hardware / facility and power                             37.2 / 21.1
+  CAPEX TOTAL                                                    58.3   ($58B per GW)
+  steady-state per year: People                                  2.68
+  steady-state per year: Electricity (full load)                 0.69
+  steady-state per year: Hardware maintenance and spares         1.12
+  steady-state per year: Data licensing                          1.50
+  steady-state per year: Human data (annotation, expert tasks, red-team vendors)   1.00
+  STEADY-STATE OPERATING COST per year                            7.0
+  before launch: People                                          3.64
+  before launch: Electricity                                     0.51
+  before launch: Hardware maintenance and spares                 0.67
+  before launch: Data licensing                                  3.75
+  before launch: Human data                                      2.00
+  before launch: Rented compute before the campus is live        1.50
+  OPERATING COST BEFORE LAUNCH                                   12.1
+  PROGRAM TOTAL TO LAUNCH                                        70.4
+

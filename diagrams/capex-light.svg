@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 388" width="760" height="388" role="img" aria-label="Capital cost by line" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>Capital cost by line</title>
+<desc>Ranked bar chart of capital cost by line item.</desc>
+<rect x="0.5" y="0.5" width="759" height="387" rx="8" fill="#fcfcfb" stroke="#e1e0d9"/>
+<text x="24" y="34" font-size="15" font-weight="600" fill="#0b0b0b">Capital cost by line</text>
+<text x="24" y="54" font-size="12" fill="#52514e">Billions of US dollars. Total about $58 billion for the 1 GW campus.</text>
+<line x1="314.0" y1="72" x2="314.0" y2="348" stroke="#c3c2b7" stroke-width="1"/>
+<text x="314.0" y="366" font-size="11" fill="#898781" text-anchor="middle">$0B</text>
+<line x1="400.0" y1="72" x2="400.0" y2="348" stroke="#e1e0d9" stroke-width="1"/>
+<text x="400.0" y="366" font-size="11" fill="#898781" text-anchor="middle">$10B</text>
+<line x1="486.0" y1="72" x2="486.0" y2="348" stroke="#e1e0d9" stroke-width="1"/>
+<text x="486.0" y="366" font-size="11" fill="#898781" text-anchor="middle">$20B</text>
+<line x1="572.0" y1="72" x2="572.0" y2="348" stroke="#e1e0d9" stroke-width="1"/>
+<text x="572.0" y="366" font-size="11" fill="#898781" text-anchor="middle">$30B</text>
+<line x1="658.0" y1="72" x2="658.0" y2="348" stroke="#e1e0d9" stroke-width="1"/>
+<text x="658.0" y="366" font-size="11" fill="#898781" text-anchor="middle">$40B</text>
+<text x="304" y="97.0" font-size="12.5" fill="#52514e" text-anchor="end">GPU racks</text>
+<path d="M314,86.0 h259.2 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-259.2 z" fill="#2a78d6"/>
+<text x="585.2" y="97.0" font-size="12" fill="#0b0b0b">$31B</text>
+<text x="304" y="127.0" font-size="12.5" fill="#52514e" text-anchor="end">Buildings, electrical, cooling</text>
+<path d="M314,116.0 h146.5 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-146.5 z" fill="#2a78d6"/>
+<text x="472.5" y="127.0" font-size="12" fill="#0b0b0b">$18B</text>
+<text x="304" y="157.0" font-size="12.5" fill="#52514e" text-anchor="end">Network, optics, cabling</text>
+<path d="M314,146.0 h35.5 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-35.5 z" fill="#2a78d6"/>
+<text x="361.5" y="157.0" font-size="12" fill="#0b0b0b">$4.6B</text>
+<text x="304" y="187.0" font-size="12.5" fill="#52514e" text-anchor="end">On-site generation</text>
+<path d="M314,176.0 h20.6 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-20.6 z" fill="#2a78d6"/>
+<text x="346.6" y="187.0" font-size="12" fill="#0b0b0b">$2.9B</text>
+<text x="304" y="217.0" font-size="12.5" fill="#52514e" text-anchor="end">Storage</text>
+<path d="M314,206.0 h4.6 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-4.6 z" fill="#2a78d6"/>
+<text x="330.6" y="217.0" font-size="12" fill="#0b0b0b">$1.0B</text>
+<text x="304" y="247.0" font-size="12.5" fill="#52514e" text-anchor="end">CPU fleet</text>
+<path d="M314,236.0 h4.6 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-4.6 z" fill="#2a78d6"/>
+<text x="330.6" y="247.0" font-size="12" fill="#0b0b0b">$1.0B</text>
+<text x="304" y="277.0" font-size="12.5" fill="#52514e" text-anchor="end">Substations, grid interconnect</text>
+<rect x="314" y="266.0" width="3.4" height="14" fill="#2a78d6"/>
+<text x="325.4" y="277.0" font-size="12" fill="#0b0b0b">$0.40B</text>
+<text x="304" y="307.0" font-size="12.5" fill="#52514e" text-anchor="end">Battery storage</text>
+<rect x="314" y="296.0" width="2.1" height="14" fill="#2a78d6"/>
+<text x="324.1" y="307.0" font-size="12" fill="#0b0b0b">$0.24B</text>
+<text x="304" y="337.0" font-size="12.5" fill="#52514e" text-anchor="end">Land and site works</text>
+<rect x="314" y="326.0" width="1.5" height="14" fill="#2a78d6"/>
+<text x="323.3" y="337.0" font-size="12" fill="#0b0b0b">$0.15B</text>
+</svg>
